@@ -58,6 +58,8 @@
   }
   .pdf-btn:active{ background:var(--line); }
 
+  .header-note{ font-size:12.5px; color:var(--text-dim); line-height:1.5; margin:12px 2px 0; }
+
   .legend{ display:flex; flex-wrap:wrap; gap:9px; padding:16px 18px 0; }
   .legend-item{
     display:flex; align-items:center; gap:7px; font-size:14px; color:var(--text);
@@ -144,11 +146,11 @@
 
   /* Modal — enlarged, near-fullscreen viewer */
   .modal-backdrop{
-    position:fixed; inset:0; background:rgba(0,0,0,.92); display:none;
+    position:fixed; inset:0; background:#111214; display:none;
     flex-direction:column; z-index:50;
   }
   .modal-backdrop.open{ display:flex; }
-  .modal-top{ display:flex; align-items:center; justify-content:space-between; padding:12px 14px; gap:10px; }
+  .modal-top{ display:flex; align-items:center; justify-content:space-between; padding:12px 14px; gap:10px; background:#111214; position:relative; z-index:2; }
   .modal-caption{ color:var(--text); font-size:14.5px; flex:1; }
   .modal-close-x{
     flex:none; background:var(--card); border:1px solid var(--line); color:var(--text);
@@ -215,6 +217,7 @@
     </div>
   </div>
   <a href="plan.pdf" target="_blank" rel="noopener" class="pdf-btn">📄 Повний план монтажу (PDF, усі креслення)</a>
+  <p class="header-note">Дані спільні для всієї команди. На кожному з 4 видів плану (2D, розміри, 3D, офіційний) підсвічена своя ділянка — орієнтовно, не координати кожного кріплення.</p>
 </header>
 
 <div class="legend" id="legend"></div>
@@ -230,8 +233,6 @@
   <button class="refresh" id="refreshBtn">Оновити з сервера</button>
   <div class="status-line" id="statusLine">—</div>
 </div>
-
-<div class="footer-note">Дані спільні для всієї команди. На кожному з 4 видів плану (2D, розміри, 3D, офіційний) підсвічена своя ділянка — орієнтовно, не координати кожного кріплення.</div>
 
 <div class="modal-backdrop" id="modalBackdrop">
   <div class="modal-top">
